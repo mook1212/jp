@@ -517,7 +517,7 @@ if (URL_id.get('name')) {
 
 // 글쓰기 기능
 $('#notice-write').click(() => {
-    location.href = 'http://127.0.0.1:5500/QnA/write.html'
+    location.href = '/QnA/write.html'
 })
 
 

@@ -1439,7 +1439,7 @@ body::-webkit-scrollbar {
     justify-content: space-between;
     align-items: center;
     position: relative;
-    animation: slide-left 60s linear infinite;
+    animation: slide-left 130s linear infinite;
     animation-iteration-count: infinite;
     color: #fff;
 }
@@ -1460,14 +1460,15 @@ body::-webkit-scrollbar {
     height: 100%;
 }
 .logo_slider ul P {
-    font-size: 80px;
-    margin: 0px 130px 0px 100px;
+    font-size: 140px;
+    letter-spacing:40px;
+    margin: 0px 100px 0px 100px;
     display: flex;
     align-items: center;
 }
 .logo_slider ul i {
     margin: 0px 10px 0px 10px;
-    font-size: 30px;
+    font-size: 70px;
 }
 
 @keyframes slide-left {
@@ -1481,6 +1482,8 @@ body::-webkit-scrollbar {
         transform: translateX(-100%);
     }
 }
+
+
 
 /* logo slide end */
 
@@ -1543,11 +1546,3 @@ footer {
 }
 
 /* footer end */
-
-
-
-/* scroll event */
-
-
-
-/* scroll event */

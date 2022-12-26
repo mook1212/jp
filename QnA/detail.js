@@ -41,16 +41,6 @@ db.collection('게시글목록').where('id', '==', Number(URL_id.get('id'))).get
     </div>
     `)
 
-    // if (data[0].답변 == true) {
-    //     $('#update').css('display', 'none')
-    // }
-
-    // for (let i = 0; i < data[0].내용.length; i++) {
-    //     $('.text').append(`
-    //         <p style='white-space: pre-wrap;'>${data[0].내용[i]}</p>
-    //     `)
-    // }
-
 })
 
 
@@ -108,7 +98,7 @@ db.collection('게시글목록').doc(URL_id.get('id')).collection('comment').ord
         $('#admin-delete').click(() => {
             db.collection('게시글목록').doc(URL_id.get('id')).delete().then(()=>{
                 alert('게시글삭제')
-                location.href = 'http://127.0.0.1:5500/QnA/notice.html'
+                location.href = '/QnA/notice.html'
             })
         })
 
@@ -163,7 +153,7 @@ db.collection('게시글목록').doc(URL_id.get('id')).collection('comment').ord
 
 // 게시글 수정버튼 누를시 패스워드 모달 띄워줌
 $('#update').click(() => {
-    location.href = `http://127.0.0.1:5500/QnA/modify.html?id=${URL_id.get('id')}`
+    location.href = `/QnA/modify.html?id=${URL_id.get('id')}`
 
 })
 
@@ -187,7 +177,7 @@ $('#delete-confirm').click(() => {
             if (a.data().pw == pw) {
                 db.collection('게시글목록').doc(local).delete()
                     .then(() => {
-                        location.href = 'http://127.0.0.1:5500/QnA/notice.html'
+                        location.href = '/QnA/notice.html'
                     })
             } else {
                 alert('비밀번호를 확인하여주세요')
@@ -205,7 +195,7 @@ $('#delete-cancel').click(() => {
 
 // 목록으로 돌아가기 
 $('#cancel').click(() => {
-    location.href = 'http://127.0.0.1:5500/QnA/notice.html'
+    location.href = '/QnA/notice.html'
 })
 
 

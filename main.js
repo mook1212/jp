@@ -180,7 +180,7 @@ document.addEventListener('scroll', function () {
 
     }
 
-    if (window.scrollY >= elementTop4) {
+    if (window.scrollY+1 >= elementTop4) {
         c_1.style.backgroundColor = '#fdd100';
         nav1.style.opacity = 0
         ul1.style.backgroundColor = '#fdd100'
@@ -197,6 +197,9 @@ document.addEventListener('scroll', function () {
         nav4.style.opacity = 1
 
     }
+
+    console.log(window.scrollY);
+    console.log(elementTop4);
 
 });
 

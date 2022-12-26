@@ -39,6 +39,7 @@ db.collection('공지사항').where('id', '==', Number(URL_id.get('id'))).get().
         })
 
         let max = Math.max.apply(null, prev)
+        console.log(max);
 
         db.collection('공지사항').where('id', '==', max).get().then((res) => {
             res.forEach((a) => {
@@ -52,7 +53,7 @@ db.collection('공지사항').where('id', '==', Number(URL_id.get('id'))).get().
 
             document.querySelector('#prev-title').addEventListener('click', (e) => {
                 if (e.target.dataset.id) {
-                    location.href = `http://127.0.0.1:5500/news/news-detail.html?id=${e.target.dataset.id}`
+                    location.href = `/news/news-detail.html?id=${e.target.dataset.id}`
                 }
             })
         })
@@ -68,9 +69,8 @@ db.collection('공지사항').where('id', '==', Number(URL_id.get('id'))).get().
 
         let min = Math.min.apply(null, next)
 
-        db.collection('news').where('id', '==', min).get().then((res) => {
+        db.collection('공지사항').where('id', '==', min).get().then((res) => {
             res.forEach((a) => {
-                // console.log(a.data());
                 document.querySelector('.next-title').innerHTML = `
                 <p id='next-title' data-id='${a.data().id}'>
                     ${a.data().제목}
@@ -80,7 +80,7 @@ db.collection('공지사항').where('id', '==', Number(URL_id.get('id'))).get().
 
             document.querySelector('#next-title').addEventListener('click', (e) => {
                 if (e.target.dataset.id) {
-                    location.href = `http://127.0.0.1:5500/news/news-detail.html?id=${e.target.dataset.id}`
+                    location.href = `/news/news-detail.html?id=${e.target.dataset.id}`
                 }
             })
         })
@@ -90,7 +90,7 @@ db.collection('공지사항').where('id', '==', Number(URL_id.get('id'))).get().
 
 
 document.getElementById('back').addEventListener('click', () => {
-    location.href = `http://127.0.0.1:5500/news/news.html`
+    location.href = `/news/news.html`
 })
 
 if (localStorage.getItem('admin')) {
@@ -99,10 +99,10 @@ if (localStorage.getItem('admin')) {
 `
     $('.detail-main').append(del)
 
-    $('#admin-delete').click(()=>{
-        db.collection('공지사항').doc(String(URL_id.get('id'))).delete().then(()=>{
+    $('#admin-delete').click(() => {
+        db.collection('공지사항').doc(String(URL_id.get('id'))).delete().then(() => {
             alert('삭제완료')
-            location.href = `http://127.0.0.1:5500/news/news.html`
+            location.href = `/news/news.html`
         })
 
     })

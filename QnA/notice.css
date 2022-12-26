@@ -1,10 +1,24 @@
-@charset "UTF-8";
 * {
-  margin: 0;
   padding: 0;
+  margin: 0;
   box-sizing: border-box;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+:root {
+  --main-color: #fdd100;
+  --title-size: 50px;
+}
+
+
+html {
+  scroll-behavior: smooth;
+  /* -ms-overflow-style: none; 인터넷 익스플로러 */
+  /* scrollbar-width: none; 파이어폭스 */
+}
+
+li {
   list-style: none;
-  font-family: "Noto Sans KR", sans-serif;
 }
 
 a {
@@ -14,11 +28,12 @@ a {
 html {
   width: 100%;
   height: 100%;
+  font-family: "Noto Sans KR", sans-serif;
 }
 
 .notice-container {
   height: 100%;
-  background-image: url("../imgs/4_bg.png");
+  background-image: url("./img/4_bg.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -29,11 +44,9 @@ html {
   height: 100%;
 }
 
-
 /* header start */
-
 /* dropdown */
-
+/* header end */
 .dropbtn {
   background: none;
   color: white;
@@ -52,7 +65,7 @@ html {
   display: none;
   position: absolute;
   right: -15px;
-  background-color: #0000008f;
+  background-color: #00000f;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
 }
@@ -89,14 +102,14 @@ html {
 .header {
   position: fixed;
   background-color: #fff;
-  z-index: 9999;
+  z-index: 9998;
   display: flex;
   justify-content: space-between;
   width: 100%;
   background: none;
   padding: 15px 30px 15px 30px;
   align-items: center;
-  backdrop-filter: blur(10px) !important;
+  /* backdrop-filter: blur(10px) !important; */
 }
 
 .header img {
@@ -115,7 +128,6 @@ html {
 .header .category button {
   margin-right: 20px;
   margin-left: 20px;
-  color: #fff;
 }
 
 .header .category li a {
@@ -131,52 +143,14 @@ html {
 }
 
 
-/* header end */
-
-
-@media (max-width: 1300px) {
-  .header {
-    height: 150px;
-  }
-  .header-img {
-    width: 110px;
-  }
-  .header-content {
-    width: 60%;
-  }
-  .nav-item {
-    font-size: 20px;
-  }
-}
-@media (min-width: 2500px) {
-  .header-content {
-    width: 40%;
-  }
-}
-@media (max-width: 800px) {
-  .header {
-    height: 130px;
-  }
-  .header-img {
-    width: 90px;
-    margin-left: 15px;
-  }
-  .header-content {
-    display: none;
-  }
-  .m-nav {
-    display: flex;
-  }
-}
 .notice-header {
-  padding-top: 300px;
-  padding-bottom: 300px;
+  height: 500px;
   color: white;
   text-align: center;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 70px;
+  font-size: 100px;
   font-weight: 400;
 }
 

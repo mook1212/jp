@@ -38,17 +38,17 @@ db.collection('공지사항').get().then((res) => {
 
     // 게시글 클릭시 상세페이지 넘어가기
     $(`.news-item`).click((e) => {
-        location.href = `http://127.0.0.1:5500/news/news-detail.html?id=${e.target.dataset.id}`
+        location.href = `/news/news-detail.html?id=${e.target.dataset.id}`
     })
 
     let mouse;
 
-    for(mouse = 1; mouse <= $('.mouse').length; mouse ++) {
+    for (mouse = 1; mouse <= $('.mouse').length; mouse++) {
         console.log(mouse);
 
-        const circle = document.querySelector(`.circle${mouse-1}`);
+        const circle = document.querySelector(`.circle${mouse - 1}`);
 
-        document.querySelector(`.news-item${mouse-1}`).addEventListener("mousemove", (e) => {
+        document.querySelector(`.news-item${mouse - 1}`).addEventListener("mousemove", (e) => {
 
             const mouseX = e.pageX;
 
@@ -71,6 +71,6 @@ if (localStorage.getItem('admin')) {
     `)
 
     document.querySelector('#admin-write').addEventListener('click', () => {
-        location.href = 'http://127.0.0.1:5500/공지사항/admin-write.html'
+        location.href = '/news/admin-write.html'
     })
 }

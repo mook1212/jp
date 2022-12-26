@@ -53,7 +53,7 @@ db.collection('게시글목록').where('id', '==', Number(URL_id.get('id'))).get
                 if (a.data().pw == pw_check) {
                     db.collection('게시글목록').doc(URL_id.get('id')).update({ 이름: name.val(), 내용: text.val().split('\r'), 제목: title.val() })
                         .then(() => {
-                            location.href = `http://127.0.0.1:5500/QnA/detail.html?id=${URL_id.get('id')}`
+                            location.href = `/QnA/detail.html?id=${URL_id.get('id')}`
                         })
                 } else {
                     alert('비밀번호를 확인하여주세요')
@@ -73,5 +73,5 @@ db.collection('게시글목록').where('id', '==', Number(URL_id.get('id'))).get
 
 // 수정 취소
 $('#modify-cancel').click(() => {
-    location.href = `http://127.0.0.1:5500/QnA/detail.html?id=${URL_id.get('id')}`
+    location.href = `/QnA/detail.html?id=${URL_id.get('id')}`
 })

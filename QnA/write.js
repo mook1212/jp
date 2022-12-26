@@ -44,7 +44,7 @@ document.getElementById('write-clear').addEventListener('click', () => {
                 // 게시글 DB 저장
                 db.collection('게시글목록').doc(String(totalpost)).set({ id: totalpost, 답변: false, 제목: title, 이름: name, pw: pw, 내용: text.split('\r'), 작성일: day, date: today })
                     .then(() => {
-                        location.href = 'http://127.0.0.1:5500/QnA/notice.html'
+                        location.href = '/QnA/notice.html'
 
                         // alert('게시글 작성이 완료되었습니다.')
                     })
@@ -62,7 +62,7 @@ document.getElementById('write-clear').addEventListener('click', () => {
 
 // 글쓰기 취소
 document.getElementById('write-cancel').addEventListener('click', () => {
-    location.href = 'http://127.0.0.1:5500/QnA/notice.html'
+    location.href = '/QnA/notice.html'
     console.log('뒤로가기');
 })
 
