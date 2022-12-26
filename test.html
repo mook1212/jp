@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <style>
+        body {
+            background: #2ecc71;
+            font-size: 62.5%;
+        }
+
+        .btn-container {
+            padding: 2em;
+        }
+
+        .btn-2,
+        .btn-2::after {
+            -webkit-transition: all 0.3s;
+            -moz-transition: all 0.3s;
+            -o-transition: all 0.3s;
+            transition: all 0.3s;
+        }
+
+        .btn-2 {
+            background: none;
+            border: 3px solid #fff;
+            border-radius: 5px;
+            color: #fff;
+            display: block;
+            font-size: 1.6em;
+            font-weight: bold;
+            margin: 1em auto;
+            width: 200px;
+            height: 80px;
+            position: relative;
+            text-transform: uppercase;
+        }
+
+        .btn-2::before,
+        .btn-2::after {
+            background-color: red;
+            content: '';
+            position: absolute;
+            z-index: -1;
+        }
+
+        .btn-2:hover {
+            color: #2ecc71;
+        }
+
+
+        /* BUTTON 2 */
+        .btn-2::after {
+            height: 100%;
+            left: 0;
+            top: 0;
+            width: 0;
+        }
+
+        .btn-2:hover:after {
+            width: 100%;
+        }
+
+
+
+        .back {
+            width: 33%;
+            height: 200px;
+            float: left;
+            background-color: #eeeeee;
+            border: 10px;
+            border-color: #ffffff;
+            border-style: solid;
+            box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            counter-increment: bc;
+            padding: 0px 5px 5px 5px;
+            /* height: calc(100% + 100px); */
+        }
+
+        .back:before {
+            content: counter(bc) "_";
+            position: absolute;
+            padding: 10px;
+        }
+
+
+        .button_base {
+            margin: 0;
+            border: 0;
+            font-size: 18px;
+            position: relative;
+            top: 50%;
+            left: 50%;
+            margin-top: -25px;
+            margin-left: -100px;
+            width: 200px;
+            height: 50px;
+            text-align: center;
+            box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            -webkit-user-select: none;
+            cursor: default;
+        }
+
+        .button_base:hover {
+            cursor: pointer;
+        }
+
+
+        /* ### ### ### 07 */
+        .b07_3d_double_roll {
+            perspective: 500px;
+            -webkit-perspective: 500px;
+            -moz-perspective: 500px;
+            transform-style: preserve-3d;
+            -webkit-transform-style: preserve-3d;
+        }
+
+        .b07_3d_double_roll div {
+            position: absolute;
+            text-align: center;
+            padding: 10px;
+            border: #000000 solid 1px;
+            pointer-events: none;
+            box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+        }
+
+        .b07_3d_double_roll div:nth-child(1) {
+            color: #000000;
+            background-color: #ffffff;
+            z-index: 0;
+            width: 100%;
+            height: 50px;
+            clip: rect(0px, 100px, 50px, 0px);
+            position: absolute;
+            transition: all 0.2s ease;
+            -webkit-transition: all 0.2s ease;
+            -moz-transition: all 0.2s ease;
+            transform: rotateX(0deg);
+            -webkit-transform: rotateX(0deg);
+            -moz-transform: rotateX(0deg);
+            transform-origin: 50% 50% -25px;
+            -webkit-transform-origin: 50% 50% -25px;
+            -moz-transform-origin: 50% 50% -25px;
+        }
+
+        .b07_3d_double_roll div:nth-child(2) {
+            color: #000000;
+            background-color: #000000;
+            z-index: -1;
+            width: 100%;
+            height: 50px;
+            clip: rect(0px, 100px, 50px, 0px);
+            position: absolute;
+            transform: rotateX(90deg);
+            -webkit-transform: rotateX(90deg);
+            -moz-transform: rotateX(90deg);
+            transition: all 0.2s ease;
+            -webkit-transition: all 0.2s ease;
+            -moz-transition: all 0.2s ease;
+            transform-origin: 50% 50% -25px;
+            -webkit-transform-origin: 50% 50% -25px;
+            -moz-transform-origin: 50% 50% -25px;
+        }
+
+        .b07_3d_double_roll div:nth-child(3) {
+            color: #000000;
+            background-color: #ffffff;
+            z-index: 0;
+            width: 100%;
+            height: 50px;
+            clip: rect(0px, 200px, 50px, 100px);
+            position: absolute;
+            transition: all 0.2s ease 0.1s;
+            -webkit-transition: all 0.2s ease 0.1s;
+            -moz-transition: all 0.2s ease 0.1s;
+            transform: rotateX(0deg);
+            -webkit-transform: rotateX(0deg);
+            -moz-transform: rotateX(0deg);
+            transform-origin: 50% 50% -25px;
+            -webkit-transform-origin: 50% 50% -25px;
+            -moz-transform-origin: 50% 50% -25px;
+        }
+
+        .b07_3d_double_roll div:nth-child(4) {
+            color: #000000;
+            background-color: #000000;
+            z-index: -1;
+            width: 100%;
+            height: 50px;
+            clip: rect(0px, 200px, 50px, 100px);
+            position: absolute;
+            transform: rotateX(-90deg);
+            -webkit-transform: rotateX(-90deg);
+            -moz-transform: rotateX(-90deg);
+            transition: all 0.2s ease 0.1s;
+            -webkit-transition: all 0.2s ease 0.1s;
+            -moz-transition: all 0.2s ease 0.1s;
+            transform-origin: 50% 50% -25px;
+            -webkit-transform-origin: 50% 50% -25px;
+            -moz-transform-origin: 50% 50% -25px;
+        }
+
+        .b07_3d_double_roll:hover div:nth-child(1) {
+            background-color: #000000;
+            transition: all 0.2s ease;
+            -webkit-transition: all 0.2s ease;
+            -moz-transition: all 0.2s ease;
+            transform: rotateX(-90deg);
+            -webkit-transform: rotateX(-90deg);
+            -moz-transform: rotateX(-90deg);
+        }
+
+        .b07_3d_double_roll:hover div:nth-child(2) {
+            color: #ffffff;
+            transition: all 0.2s ease;
+            -webkit-transition: all 0.2s ease;
+            -moz-transition: all 0.2s ease;
+            transform: rotateX(0deg);
+            -webkit-transform: rotateX(0deg);
+            -moz-transform: rotateX(0deg);
+        }
+
+        .b07_3d_double_roll:hover div:nth-child(3) {
+            background-color: #000000;
+            transition: all 0.2s ease 0.1s;
+            -webkit-transition: all 0.2s ease 0.1s;
+            -moz-transition: all 0.2s ease 0.1s;
+            transform: rotateX(90deg);
+            -webkit-transform: rotateX(90deg);
+            -moz-transform: rotateX(90deg);
+        }
+
+        .b07_3d_double_roll:hover div:nth-child(4) {
+            color: #ffffff;
+            transition: all 0.2s ease 0.1s;
+            -webkit-transition: all 0.2s ease 0.1s;
+            -moz-transition: all 0.2s ease 0.1s;
+            transform: rotateX(0deg);
+            -webkit-transform: rotateX(0deg);
+            -moz-transform: rotateX(0deg);
+        }
+    </style>
+
+    <div class="btn-container">
+        <button class="btn-2">Button 2</button>
+    </div>
+
+    <div class="back">
+        <div class="button_base b07_3d_double_roll">
+            <div>01_Button</div>
+            <div>01_Button</div>
+            <div>01_Button</div>
+            <div>01_Button</div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

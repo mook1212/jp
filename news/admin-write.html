@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"
+        integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous">
+        </script>
+
+</head>
+
+<body>
+
+
+    <div>
+        <p>
+
+            제목 : <input id="title" type="text" style="width: 600px;">
+        </p>
+        <br>
+        <br>
+        <br>
+        <p>내용</p>
+        <textarea name="" id="content" cols="200" rows="40"></textarea>
+
+        <button id="clear" style="width: 100px; height: 100px; cursor: pointer;">작성</button>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-storage.js"></script>
+
+    <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyBdp_8x4eixio0yS9APFYhCyuEWu7wTVd8",
+            authDomain: "test-6a214.firebaseapp.com",
+            projectId: "test-6a214",
+            storageBucket: "test-6a214.appspot.com",
+            messagingSenderId: "324318899114",
+            appId: "1:324318899114:web:b7e1cca282e307b2dc59d3",
+            measurementId: "G-R9Q0CYN08B"
+        };
+
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore()
+
+        $('#clear').click(()=> {
+            db.collection('공지갯수').get().then((res) => {
+                res.forEach((a) => {
+                    let totalpost = a.data().totalpost
+    
+                    let title = $('#title').val()
+                    let text = $('#content').val()
+    
+                    // 현재 날짜
+                    let today = new Date()
+                    let day = today.getFullYear() + '.' + (today.getMonth() + 1) + '.' + today.getDate()
+    
+                    // 게시글 DB 저장
+                    db.collection('공지사항').doc(String(totalpost)).set({ id: totalpost, 제목: title, 내용: text.split('\r'), 작성일: day, date: today })
+                        .then(() => {
+                            alert('공지사항 성공')
+                            // alert('게시글 작성이 완료되었습니다.')
+                        })
+    
+                    // 게시글 총개수 설정
+                    db.collection('공지갯수').doc('counter').set({ totalpost: totalpost + 1 })
+    
+                })
+    
+            })
+        })
+
+
+    </script>
+
+</body>
+
+</html>

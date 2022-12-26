@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Write</title>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"
+        integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous">
+        </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700&display=swap"
+        rel="stylesheet">
+
+    <script src="https://kit.fontawesome.com/02b04573cb.js" crossorigin="anonymous"></script>
+    
+    <link rel="stylesheet" href="write.css">
+
+</head>
+
+<body>
+
+    <div class="write-container">
+
+
+     <!-- header start -->
+
+     <header class="header">
+
+        <ul><a href="../index.html"><img src="../imgs/joinpeople.png"></a></ul>
+        <ul class="category">
+            <li><a href="#">COMPANY</a></li>
+
+            <div class="dropdown" style="float:right; text-align: center;">
+                <button class="dropbtn drop-first">BUSINESS</button>
+                <div class="dropdown-content drop-sec">
+                    <a href="../memorial-hall/index.html">메타버스추모관</a>
+                    <a href="#">Bnplo 쇼핑</a>
+                </div>
+            </div>
+
+            <li><a href="../index.html#map">VISIT</a></li>
+            <li><a href="../news/news.html">NEWS</a></li>
+            <li><a href="#">Q&A</a></li>
+            <div class="dropdown" style="float:right; text-align: center;">
+                <button class="dropbtn">KR</button>
+                <div class="dropdown-content">
+                    <a href="#">한국어</a>
+                    <a href="#">English</a>
+                </div>
+            </div>
+
+        </ul>
+
+    </header>
+
+    <!-- header end -->
+
+
+
+        <div class="write-header">
+            <p>
+                문의사항
+            </p>
+        </div>
+
+        <div class="write-box">
+
+            <div class="write-main">
+                <div class="write-text">
+                    <p>문의사항</p>
+                </div>
+
+                <!-- 게시글 본문 작성 부분 -->
+                <div class="write-content">
+
+                    <div class="write-content-name write-flex-item" style="border-bottom: 1px solid gray; ">
+                        <p>작성자 </p>
+                        <input id="write-name" type="text">
+                    </div>
+
+                    <div class="write-content-header write-flex-item" style="border-bottom: 1px solid gray; ">
+                        <p>제목 </p>
+                        <input id="write-title" type="text">
+                    </div>
+
+                    <div id="" class="write-content-pw write-flex-item" style="border-bottom: 1px solid gray; ">
+                        <p>비밀번호 </p>
+                        <input id="write-pw" type="password">
+                    </div>
+
+                    <div class="write-content-text">
+                        <p>내용</p>
+                        <textarea name="" id="write-text" cols="30" rows="10"></textarea>
+                    </div>
+
+                </div>
+
+                <!-- 게시글 작성완료 , 목록 버튼 -->
+                <div class="write-btnbox">
+                    <div>
+                        <button id="write-clear"
+                            style="width: 90px; height: 35px; background-color: #fdd100; font-size: 13px; font-weight: bold;">작성완료</button>
+                        <button id="write-cancel"
+                            style="width: 90px; height: 35px; font-size: 13px; font-weight: bold;">목록</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+
+            <div class="footer-container">
+
+                <h2><img src="../imgs/joinpeople.png">주식회사 조인피플</h2>
+                <p>문의하기 <span><a href="#"><img src="../imgs/mail_icon.png" style="width: 30px;"></a></span></p>
+                <p>대표이사 <span>이두희</span></p>
+                <p>주소 <span>서울특별시 관악구 승방길 7, 203호</span></p>
+                <p>전화 <span>02-3473-3636</span></p>
+            </div>
+
+            <div class="copyright">
+                <p>COPYRIGHT 2022, JOIN PEOPLE ALL RIGHTS RESERVED.</p>
+            </div>
+        </footer>
+
+    </div>
+
+
+
+
+    <!-- 파이어베이스 연동 -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-storage.js"></script>
+
+    <script src="./write.js"></script>
+
+
+</body>
+
+</html>

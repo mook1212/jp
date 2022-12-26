@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"
+        integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="w-scroll.css">
+</head>
+
+<body>
+
+    <style>
+
+    </style>
+
+
+    <div class="memorial-hall-intro">
+
+        <div class="memorial-hall-text">
+            <div class="memorial-hall-text-box">
+                <h1>메타버스 추모관</h1>
+                <br>
+                <p>
+                    메타버스는 '현실 세계와 같은 사회적, 경제활동이 통용되는 3차원 가상공간'으로 오프라인 현실세계를 3차원 공간으로 표현한 기술입니다.
+                    <br><br>
+                    이와 같은 메타버스 산업은 게임,음악 등 다양한 산업에 융합되어 확장되고 있습니다. 자사는 이러한 메타버스 기술을 장례식장과 접목시킵니다.
+                </p>
+
+            </div>
+        </div>
+
+        <div class="w-scroll-container">
+            <div class="w-scroll-box">
+
+                <div class="w-scroll-item">
+                    <img class="slide-img1" src="./조인피플img/slide1_thum.png" alt="">
+                    <video style="" class="video-player1" src="./slide-video/slide1.mp4" type="video/mp4" muted>
+                    </video>
+
+                    <div class="text">
+                        <h1>메타버스 추모관</h1>
+                        <br>
+                        <H2>장소의 제약을 받지않는 고인과의 만남</H2>
+                        <br>
+                    </div>
+
+                    <div class="video-start1 player">
+
+                    </div>
+                </div>
+
+                <div class="w-scroll-item">
+                    <img class="slide-img2" src="./조인피플img/slide2_thum.png" alt="">
+
+                    <video class="video-player2" src="./slide-video/slide2_AdobeExpress.mp4" type="video/mp4" muted>
+                    </video>
+
+                    <div class="text">
+                        <h1>메타버스 추모관 이용실</h1>
+                        <br>
+                        <H2>고인과의 추억이 담긴 추모관 이용실</H2>
+                        <br>
+
+                    </div>
+                    <div class="video-start2 player">
+
+                    </div>
+                </div>
+
+                <div class="w-scroll-item">
+                    <img class="slide-img3" src="./조인피플img/slide3_thum.png" alt="">
+
+                    <video class="video-player3" src="./slide-video/slide3.mp4" type="video/mp4" muted>
+                    </video>
+                    <div class="text">
+                        <h1>AI 음성인식 저장</h1>
+                        <br>
+                        <H2>AI 음성인식 저장 방식을 통해 고인과 대화</H2>
+                        <br>
+
+
+                    </div>
+                    <div class="video-start3 player">
+
+                    </div>
+                </div>
+
+                <div class="w-scroll-item">
+                    <img class="slide-img4" src="./조인피플img/slide4_thum.png" alt="">
+
+                    <video class="video-player4" src="./slide-video/slide4.mp4" type="video/mp4" muted>
+                    </video>
+                    <div class="text">
+                        <h1>애니멀 메타버스 추모관</h1>
+                        <br>
+                        <H2>가족과 같던 애완동물을 메타버스 상에서도
+                            <br>
+                            만날 수 있습니다.
+                        </H2>
+                    </div>
+                    <div class="video-start4 player">
+
+                    </div>
+                </div>
+
+                <div class="w-scroll-item theme-move">
+                    <h1 style="margin-bottom: 35%;">추모관 테마</h1>
+                </div>
+
+            </div>
+        </div>
+
+
+
+        <script>
+            // 동영상 mouseover 재생
+            let video_start = [1, 2, 3, 4, 5]
+            video_start.map((a, i) => {
+                let count = a
+
+                $(`.video-start${a}`).mouseenter(() => {
+                    $(`.slide-img${a}`).fadeOut('fast', () => {
+                        $(`.video-player${a}`).fadeIn('fast', () => {
+                            document.querySelector(`.video-player${a}`).play()
+
+                        })
+                    })
+                })
+
+                $(`.video-start${a}`).mouseleave(() => {
+                    $(`.video-player${a}`).fadeOut('fast', () => {
+                        $(`.slide-img${a}`).fadeIn('fast')
+                    })
+                })
+            })
+
+            $('.w-scroll-box').scroll(()=> {
+                console.log(123);
+            })
+        </script>
+
+</body>
+
+</html>
