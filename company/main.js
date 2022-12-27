@@ -7,6 +7,17 @@ $(document).ready(function(){
 
 $(document).ready(function(){
 
+    $("#one").fadeIn("1400")
+    $("#two").css("display","none")
+    $("#three").css("display","none")
+    $(".slide-2 > a").css("border-bottom","none")
+    $(".slide-2 > a").css("color","#fff")
+    $(".slide-1 > a").css("border-bottom","3px solid #ffd100")
+    $(".slide-1 > a").css("padding-bottom","5px")
+    $(".slide-1 > a").css("color","#fdd100")
+    $(".slide-3 > a").css("border-bottom","none")
+    $(".slide-3 > a").css("color","#fff")
+
     $(".slide-1").click(function(){
         $("#one").fadeIn("1400")
         $("#two").css("display","none")

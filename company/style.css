@@ -244,6 +244,66 @@ body {
 
 /* taps end */
 
+@media(max-width:2200px){
+    #top {
+        height: 1100px;
+    }
+    .main-title {
+        margin-bottom: 0px;
+    }
+    .main-title h2 {
+        font-size: 90px;
+    }
+    .main-text .circle {
+        width: 25px;
+        height: 25px;
+        background-color: #fdd100;
+        border-radius: 50%;
+    }
+    
+    .main-text p {
+        color: #fff;
+        font-size: 45px;
+        font-weight: 400;
+    }
+    .circle-wrap {
+        width: 950px;
+        position: relative;
+    }
+    .taps ul li a {
+        color: #fff;
+        font-size: 40px;
+    }
+}
+@media(max-width:2000px){
+    #top {
+        height: 1000px;
+    }
+    .main-title h2 {
+        font-size: 80px;
+    }
+    .main-text .circle {
+        width: 20px;
+        height: 20px;
+        background-color: #fdd100;
+        border-radius: 50%;
+    }
+    
+    .main-text p {
+        color: #fff;
+        font-size: 45px;
+        font-weight: 400;
+    }
+    .circle-wrap {
+        width: 950px;
+        position: relative;
+    }
+    .taps ul li a {
+        color: #fff;
+        font-size: 40px;
+    }
+}
+
 
 /* one start */
 
