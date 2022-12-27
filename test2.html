@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <style>
+        .textanimation {
+            left: 0px;
+            background: black;
+            position: absolute;
+            overflow: hidden;
+            box-shadow: 0px -20px 20px 1px black;
+            margin-bottom: 500px;
+        }
+
+
+        .content_textanimation {
+            white-space: nowrap;
+            font-family: 'Poppins';
+            font-weight: 400;
+        }
+
+
+        .element_animation {
+            display: inline-block;
+            /* Apply animation to this element */
+            -webkit-animation: scrolling-left1 1s linear infinite;
+            animation: scrolling-left1 80s linear infinite;
+            animation-iteration-count: infinite;
+            animation-fill-mode: none;
+        }
+
+
+        .text_animation {
+            display: inline-block;
+            margin: 0;
+            color: #fff;
+            font-size: 300px;
+            font-weight: bold;
+        }
+
+        .circle_animation {
+            width: 10px;
+            height: 10px;
+            background: #fff;
+            color: #fff;
+            font-size: 30px;
+            display: inline-block;
+            border-radius: 50%;
+            margin: 0 20px;
+        }
+
+        @keyframes scrolling-left1 {
+            0% {
+                transform: translateX(0%);
+                -webkit-transform: translateX(0%);
+            }
+
+            100% {
+                transform: translateX(-100%);
+                -webkit-transform: translateX(-100%);
+            }
+        }
+
+        @-webkit-keyframes scrolling-left1 {
+            0% {
+                -webkit-transform: translateX(0%);
+            }
+
+            100% {
+                -webkit-transform: translateX(-100%);
+            }
+        }
+    </style>
+
+    <!-- <section id="two">
+
+        <div class='textanimation'>
+            <div class="content_textanimation">
+                <div class="element_animation">
+                    <p class="text_animation">Metaverse Memorial Hall</p>
+                    <span class="circle_animation"></span>
+                    <p class="text_animation">Metaverse Memorial Hall</p>
+                    <span class="circle_animation"></span>
+                    <p class="text_animation">Metaverse Memorial Hall</p>
+                    <span class="circle_animation"></span>
+                </div>
+    </section> -->
+
+
+
+
+
+    <style>
+        #slider {
+            white-space: nowrap;
+            overflow: hidden;
+            width: 100%;
+            animation: slide 20s linear infinite;
+        }
+
+        @keyframes slide {
+            from {
+                transform: translateX(0);
+            }
+
+            to {
+                transform: translateX(100%);
+            }
+        }
+    </style>
+
+    <div id="slider">HELLO WORLD</div>
+
+
+</body>
+
+</html>
